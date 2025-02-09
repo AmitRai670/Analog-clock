@@ -1,0 +1,87 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: cursive;
+    color: aqua;
+
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+
+}
+.container{
+    position: relative;
+}
+
+.clock{
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    background-color: rgba(169, 129, 129,0.1);
+    border: 2px solid rgba(169, 129, 129,0.25);
+    box-shadow: 5px 5px 15px rgb(24, 23, 23);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.clock span{
+    position: absolute;
+    transform:  rotate(calc(30deg * var(--i)));
+    inset: 12px;
+    text-align: center;
+}
+.clock span b{
+    transform: rotate(calc(-30deg * var(--i)));
+    display: inline-block;
+    font-size: 20px;
+}
+
+.clock::before{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+    z-index: 2;
+}
+.hand{
+    position: absolute;
+    display:flex ;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.hand i{
+    position: absolute;
+    background-color: #fff;
+    width: 4px;
+    height: var(--h);
+    border-radius: 8px;
+}
+#min{
+    background-color: red;
+    color: red;
+    -webkit-text-fill-color: red;
+}
+
+
+#hour i {
+    background-color: blue; 
+}
+
+#min i {
+    background-color: red; 
+}
+
+#sec i {
+    background-color: green; 
+    width: 2px; 
+}
